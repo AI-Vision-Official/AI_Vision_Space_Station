@@ -1,0 +1,19 @@
+# Auto-create folders
+important_folders = {
+    "Suno": "L:\AI_Visionairy\SunoMusic",
+    "YouTube": "L:\AI_Visionairy\YouTubeVideos",
+    "Author": "L:\AI_Visionairy\Author"
+}
+for name, path in important_folders.items():
+    os.makedirs(path, exist_ok=True)
+
+# Buttons
+buttons = [
+    ("🎵 Suno Music Folder", lambda: self.open_folder(important_folders["Suno"])),
+    ("📁 YouTube Storage", lambda: self.open_folder(important_folders["YouTube"])),
+    ("💡 Inventions Folder", lambda: self.open_folder(important_folders["Inventions"])),
+    ("🌐 Launch Google", lambda: webbrowser.open("https://www.google.com")),
+    ("🚀 Fullscreen Toggle", self.toggle_fullscreen),
+    ("❌ Exit", root.quit)
+]
+

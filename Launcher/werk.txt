@@ -1,0 +1,14 @@
+python ai_visionairy_launcher.py
+
+cd /d L:\AI_Visionairy\Launcher
+python launcher.py
+
+cd /d L:\GIT\AI_Visionairy\Launcher
+python ai_visionairy_gui_launcher.py
+
+
+
+("🎵 Heal the World Project Folder", lambda: self.open_folder("L:\4. Work - Projects\Project - Heal The World Project")),
+
+
+

@@ -1,0 +1,34 @@
+@echo off
+echo Setting up your AI Dream Factory...
+
+:: G Drive (SSD - Fast Use)
+mkdir "G:\DreamFactory\FLStudio\Projects"
+mkdir "G:\DreamFactory\FLStudio\Templates"
+mkdir "G:\DreamFactory\Kontakt\Libraries"
+mkdir "G:\DreamFactory\Kontakt\Instruments"
+mkdir "G:\DreamFactory\Suno\Songs"
+mkdir "G:\DreamFactory\TempRender"
+
+:: D Drive (Music Workspace)
+mkdir "D:\MusicWorkspace\Projects"
+mkdir "D:\MusicWorkspace\AIComposed"
+mkdir "D:\MusicWorkspace\MIDI_Experiments"
+mkdir "D:\MusicWorkspace\StreamDeck_Setups"
+
+:: E Drive (YouTube)
+mkdir "E:\YouTubeFactory\RawFootage"
+mkdir "E:\YouTubeFactory\Edited"
+mkdir "E:\YouTubeFactory\Intros_Outros"
+mkdir "E:\YouTubeFactory\Music_Bed"
+mkdir "E:\YouTubeFactory\UploadReady"
+
+:: F Drive (Inventions & Backup)
+mkdir "F:\InventorsVault\Projects\ParamotorHelmet"
+mkdir "F:\InventorsVault\Projects\SafeTLight"
+mkdir "F:\InventorsVault\Projects\InnovAsia"
+mkdir "F:\InventorsVault\Blueprints"
+mkdir "F:\InventorsVault\VideoDemoMaterials"
+mkdir "F:\InventorsVault\DreamFactory_Backups"
+
+echo All folders are set up. You're ready to roll, Chris!
+pause

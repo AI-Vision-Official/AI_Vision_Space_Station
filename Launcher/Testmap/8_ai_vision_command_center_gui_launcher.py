@@ -1,0 +1,56 @@
+import tkinter as tk
+import os
+from PIL import Image, ImageTk
+
+# Set up the main window
+root = tk.Tk()
+root.title("AI Vision Command Center")
+root.geometry("1280x720")  # Adjust to your screen resolution
+root.resizable(False, False)
+
+# Load and place the background image
+bg_path = "Background_ai_vision_command_center.png"
+bg_img = Image.open(bg_path)
+from PIL import Image, ImageTk  # (Make sure this line is at the top)
+
+bg_img = bg_img.resize((1280, 720), Image.Resampling.LANCZOS)
+
+bg_photo = ImageTk.PhotoImage(bg_img)
+
+bg_label = tk.Label(root, image=bg_photo)
+bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+# Define the buttons (Text, Path, X, Y)
+buttons = [
+    ("ChatGPT", r"C:\Users\RTX2060\AppData\Local\Programs\Python\Python313\python.exe", 540, 200),
+    ("VS Studio Code", r"C:\Users\RTX2060\AppData\Local\Programs\Microsoft VS Code\Code.exe", 540, 260),
+    ("Google Chat", r"https://chat.google.com/", 540, 320),
+    ("Photopea", r"https://www.photopea.com", 540, 380),
+    ("Pixabay", r"https://pixabay.com", 540, 440),
+    ("YouTube", r"https://www.youtube.com", 540, 500),
+    ("Exit", "exit", 540, 560)
+]
+
+# Create and place the buttons
+for text, path, x, y in buttons:
+    def open_path(p=path):
+        if p == "exit":
+            root.destroy()
+        elif p.startswith("http"):
+            os.system(f'start {p}')
+        else:
+            os.startfile(p)
+
+    btn = tk.Button(
+        root,
+        text=text,
+        command=open_path,
+        font=('Arial', 14, 'bold'),
+        bg="#000000",
+        fg="yellow",
+        width=20,
+        height=2
+    )
+    btn.place(x=x, y=y)
+
+root.mainloop()

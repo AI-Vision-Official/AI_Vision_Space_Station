@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3 Kolommen Tab Interface</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 1rem;
+  }
+  .container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .column {
+    flex: 1 1 30%;
+    min-width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 0.3rem 0;
+    padding: 0.6rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+  }
+  .btn:hover {
+    background: #0056b3;
+  }
+  .tab-content {
+    margin-top: 0.5rem;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+    padding-top: 0.5rem;
+  }
+  .tab-content > div {
+    margin-bottom: 0.4rem;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="column" id="col1">
+    <button class="btn" data-tab="tab1">Miss Batcher</button>
+    <div class="tab-content hidden" id="tab1">
+      <div>Optie 1</div>
+      <div>Optie 2</div>
+      <div>Optie 3</div>
+      <div>Optie 4</div>
+      <div>Optie 5</div>
+    </div>
+  </div>
+
+  <div class="column" id="col2">
+    <button class="btn" data-tab="tab2">AI Agent Module</button>
+    <div class="tab-content hidden" id="tab2">
+      <div>Trigger 1</div>
+      <div>Trigger 2</div>
+      <div>Trigger 3</div>
+      <div>Trigger 4</div>
+      <div>Trigger 5</div>
+      <div>Trigger 6</div>
+      <div>Trigger 7</div>
+    </div>
+  </div>
+
+  <div class="column" id="col3">
+    <button class="btn" data-tab="tab3">Derde Kolom</button>
+    <div class="tab-content hidden" id="tab3">
+      <div>Keuze A</div>
+      <div>Keuze B</div>
+      <div>Keuze C</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Korte, duidelijke code voor tab toggle
+  document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = button.dataset.tab;
+      const tab = document.getElementById(tabId);
+      const isShown = !tab.classList.contains('hidden');
+
+      // Alle tab contents sluiten
+      document.querySelectorAll('.tab-content').forEach(tc => tc.classList.add('hidden'));
+
+      // Tab openen of sluiten
+      if (!isShown) {
+        tab.classList.remove('hidden');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

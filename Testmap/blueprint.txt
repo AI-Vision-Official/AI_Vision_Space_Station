@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "title": "AI Brain Workflow System",
+    "description": "Shared understanding and creation of the AI Brain System for the AI Vision Project",
+    "last_updated": "2025-06-09"
+  },
+  "ai_vision_command_center": {
+    "project": "AI Vision Command Center",
+    "goals": [
+      {
+        "task": 1,
+        "description": "Create a structured AI collaboration environment where AI and human can work together to reach certain goals, but also enables AI to function in an automated and evolving workflow using (or creating) AI agents.",
+        "details": ["AI works with Brigitte on projects, with memory and overview."]
+      },
+      {
+        "task": 2,
+        "description": "Use DF and DFG as AI workflow triggers",
+        "details": [
+          "DF = start trigger: loads context and activates workflow",
+          "DFG = stop trigger: summarizes, saves, and updates files"
+        ]
+      },
+      {
+        "task": 3,
+        "description": "Masterplan as one evolving document",
+        "details": [
+          "Each session creates a task log",
+          "Data saved in state.json, blueprint.json, and masterplan.md",
+          "Human-readable and AI-readable formats"
+        ]
+      },
+      {
+        "task": 4,
+        "description": "AI fully understands the project state",
+        "details": [
+          "Reads state.json and blueprint.json",
+          "Knows goals, pending items, decisions"
+        ]
+      },
+      {
+        "task": 5,
+        "description": "Human-AI collaboration with GUI",
+        "details": [
+          "GUI tab: 'AI Vision Team'",
+          "GUI is Python-based",
+          "DF/DFG triggers via ChatGPT or GUI",
+          "AI agents can also trigger DF/DFG",
+          "GitHub: private with token-based access",
+          "Local sync on PC boot and after each DFG",
+          "Sync script: git pull → commit → push (automated)"
+        ]
+      },
+      {
+        "task": 6,
+        "description": "Implement redundancy and failover",
+        "details": [
+          "Fallback routes: B or C if A fails",
+          "Backups: JSON + Markdown + Database"
+        ]
+      }
+    ],
+    "architecture": {
+      "agents": [
+        "Human GUI",
+        "Agent 1",
+        "Agent 2",
+        "ChatGPT Agent"
+      ],
+      "triggers": ["DF", "DFG"],
+      "github_repo": "Private, token-based access",
+      "local_sync": "On PC boot and after each DFG",
+      "sync_script": "git pull → commit → push (automated)"
+    },
+    "structure": {
+      "directories": [
+        "masterplan/blueprint.json",
+        "masterplan/masterplan.md",
+        "logs/state.json",
+        "logs/task-log-YYYY-MM-DD.md",
+        "agents/agent1.py",
+        "gui_launcher/DF_trigger.py",
+        "gui_launcher/DFG_trigger.py",
+        "api/DF_trigger.js",
+        "api/DFG_trigger.js",
+        "settings/settings.yaml",
+        "gui_launcher/gui.py"
+      ]
+    },
+    "file_paths": {
+      "blueprint": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\Masterplan\\blueprint.json",
+      "masterplan": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\Masterplan\\masterplan.md",
+      "state": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\Logs\\state.json",
+      "task_log": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\Logs\\task-log-YYYY-MM-DD.md",
+      "agent1": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\Agents\\agent1.py",
+      "settings": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\settings\\settings.yaml",
+      "vercel_config": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\settings\\.vercel\\vercel.json",
+      "api_handler": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\api\\ai-handler.js",
+      "df_script": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\api\\DF_trigger.js",
+      "dfg_script": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Masterplan\\api\\DFG_trigger.js",
+      "gui_launcher": "L:\\GIT\\Projects\\AI Vision Command Center\\gui_launcher\\ai_vision_command_launcher.py",
+      "gui_backup": "L:\\GIT\\Projects\\AI Vision Command Center\\gui_launcher\\ai_vision_command_launcher_backup.py",
+      "bat_launcher": "L:\\GIT\\Projects\\AI Vision Command Center\\gui_launcher\\ai_vision_command_launcher.bat"
+    },
+    "workflow": {
+      "DF": {
+        "action": "Read blueprint.json and state.json, assign tasks, create logs",
+        "agents_triggered": "All available"
+      },
+      "DFG": {
+        "action": "Stop task, summarize, update state, blueprint and masterplan files",
+        "commit_push": true
+      }
+    },
+    "DFG_trigger_definition": {
+      "DFG": "Ends the task and activates AI summarization",
+      "AI_action": [
+        "Summarize the conversation",
+        "Update state.json (AI log)",
+        "Update task-log (human log)",
+        "Update blueprint.json (AI structure)",
+        "Update masterplan.md (human structure)"
+      ],
+      "note": "Brigitte does not write the summary; AI handles this automatically"
+    },
+    "human_initiated_communication_flow": [
+      "Brigitte opens ChatGPT or GUI",
+      "Types DF to start task",
+      "ChatGPT loads context and starts project",
+      "Types DFG to end",
+      "AI summarizes and updates all files"
+    ],
+    "ai_initiated_communication_flow": [
+      "AI agent is triggered via DF",
+      "Loads blueprint and state",
+      "Starts task and logs progress",
+      "Ends with DFG trigger and updates"
+    ],
+    "human_vs_machine_files": {
+      "json": "Machine brain (AI use)",
+      "md": "Human-readable memory (logbook)",
+      "reason": "Automation + human understanding combined"
+    },
+    "masterplan_sample": {
+      "date": "2025-06-09",
+      "trigger": "DF (by GUI)",
+      "agents": ["Agent1", "Agent2"],
+      "tasks": ["Drought analysis", "Logistics scan"],
+      "summary": [
+        "Agent1 mapped high-risk drought zones",
+        "Agent2 ran aid delivery simulation"
+      ],
+      "insights": [
+        "Use OSM overlays for faster mapping",
+        "Prioritize unstable regions"
+      ]
+    },
+    "state_sample": {
+      "current_workflow": "drought-aid-africa",
+      "step": "logistics-mapping",
+      "agents_active": ["agent1", "agent2"],
+      "last_trigger": "DF",
+      "last_update": "2025-06-09T11:00Z"
+    },
+    "agent_behavior_example": {
+      "file": "agent1.py",
+      "logic": [
+        "Read blueprint",
+        "Read state",
+        "If workflow = drought-aid-africa → analyze",
+        "Write task-log",
+        "Update blueprint",
+        "Update masterplan",
+        "Update state",
+        "Push to GitHub"
+      ]
+    }
+  }
+}

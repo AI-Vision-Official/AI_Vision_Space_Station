@@ -1,0 +1,132 @@
+
+# AI Brain Workflow System
+
+## Overzicht
+Een systeem dat samenwerking tussen mens en AI structureert binnen het *AI Vision Command Center*-project.  
+Doel: gestructureerde samenwerking, automatische workflows en goede geheugenopbouw.
+
+---
+
+## 📌 Doelen
+
+1. **Samenwerkingsomgeving tussen AI en mens**
+   - AI werkt met Brigitte samen
+   - Met geheugen en overzicht
+
+2. **DF & DFG als triggers**
+   - **DF** = Start: laadt context en activeert workflow
+   - **DFG** = Stop: vat samen, slaat op, sluit af
+
+3. **Masterplan als groeidocument**
+   - Elke sessie creëert een task-log
+   - Data opgeslagen in:
+     - `state.json`
+     - `blueprint.json`
+     - `masterplan.md`
+
+4. **AI begrijpt altijd de projectstatus**
+   - Leest `state.json` en `blueprint.json`
+
+5. **Samenwerking via GUI**
+   - Tab: "AI Vision Team"
+   - DF/DFG mogelijk via GUI en ChatGPT
+
+6. **Redundantie ingebouwd**
+   - Backups in JSON, Markdown en database
+
+---
+
+## 🧠 Architectuur
+
+- **Agents**: Human GUI, Agent 1, Agent 2, ChatGPT Agent
+- **Triggers**: DF en DFG
+- **GitHub Repo**: Privé, token-based toegang
+- **Local sync**: Automatisch bij PC opstart of DFG
+- **Sync-script**: `git pull → commit → push`
+
+---
+
+## 📁 Structuur & Bestanden
+
+### Mappenstructuur
+- `masterplan/blueprint.json`
+- `logs/state.json`
+- `logs/task-log-YYYY-MM-DD.md`
+- `agents/agent1.py`
+- `gui_launcher/*.py`
+- `api/*.js`
+- `settings/settings.yaml`
+
+### Lokale paden (voorbeeld)
+- `L:/GIT/Projects/.../blueprint.json`
+- `.../task-log-YYYY-MM-DD.md`
+- `.../ai_vision_command_launcher.py`
+
+---
+
+## 🔁 Workflow (Triggers)
+
+### DF (Start)
+- Laadt blueprint & state
+- Start workflow
+- Activeert agents
+
+### DFG (Stop)
+- Vat samen (door AI)
+- Update:
+  - `state.json`
+  - `blueprint.json`
+  - `task-log`
+  - `masterplan.md`
+- Commit + push naar GitHub
+
+---
+
+## 📊 Bestandstype en betekenis
+
+| Bestandstype | Betekenis                   |
+|--------------|-----------------------------|
+| `.json`      | Machinegeheugen (AI)        |
+| `.md`        | Voor mensen leesbaar logboek|
+
+---
+
+## 🧪 Voorbeeld masterplan-item
+
+- **Datum**: 2025-06-09  
+- **Trigger**: DF via GUI  
+- **Taken**: Drought analysis, Logistics scan  
+- **Resultaten**:
+  - Agent1: Risicozones droogte in kaart gebracht
+  - Agent2: Simulatie hulpdistributie gedaan
+- **Inzichten**:
+  - OSM-overlays versnellen mapping
+  - Instabiele regio’s prioriteren
+
+---
+
+## ⏱️ Voorbeeld van `state.json`
+
+```json
+{
+  "current_workflow": "drought-aid-africa",
+  "step": "logistics-mapping",
+  "agents_active": ["agent1", "agent2"],
+  "last_trigger": "DF",
+  "last_update": "2025-06-09T11:00Z"
+}
+```
+
+---
+
+## 🔁 Voorbeeld gedrag `agent1.py`
+
+1. Lees blueprint & state  
+2. Controleer of workflow = `drought-aid-africa`  
+3. Analyseer en schrijf logboek  
+4. Update alle bestanden  
+5. Push alles naar GitHub
+
+---
+
+© Brigitte Schrijvers – Heal the World Project

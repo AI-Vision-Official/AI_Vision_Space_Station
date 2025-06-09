@@ -1,0 +1,20 @@
+@echo off
+REM === Automatische Backup voor AI Vision Command Center ===
+set SOURCE=L:\GIT\Projects\AI Vision Command Center\AI Vision Boardroom
+set DEST=L:\GIT\Projects\AI Vision Command Center\backup_center
+set DATE=%DATE:~6,4%-%DATE:~3,2%-%DATE:~0,2%
+set TIME=%TIME:~0,2%%TIME:~3,2%
+
+REM Tijd schoonmaken (verwijder spatie)
+if "%TIME:~0,1%"==" " set TIME=0%TIME:~1,1%%TIME:~2,2%
+
+REM Submap aanmaken met datum + tijd
+set BACKUPFOLDER=%DEST%\%DATE%_%TIME%
+mkdir "%BACKUPFOLDER%"
+
+REM Bestanden kopiëren
+copy "%SOURCE%\blueprint_for_ai.json" "%BACKUPFOLDER%"
+copy "%SOURCE%\context\master-summary_for_humans.md" "%BACKUPFOLDER%"
+
+echo Backup voltooid: %BACKUPFOLDER%
+pause

@@ -1,0 +1,84 @@
+{
+  "project": {
+    "name": "AI Vision Command Center",
+    "version": "1.0.0",
+    "created": "2025-06-04",
+    "last_updated": "2025-06-04",
+    "author": "Brigitte Schrijvers & Chat GPT",
+    "description": "A modular, intelligent AI-agent management and memory system that grows over time. It coordinates context, tasks, and goals using structured memory (JSON) and human-readable logs (Markdown)."
+  },
+  "structure": {
+    "base_folder": "L:/GIT/Projects/AI Vision Command Center/",
+    "context_folder": "L:/GIT/Projects/AI Vision Command Center/AI Vision Boardroom/",
+    "gui_folder": "L:/GIT/Projects/AI Vision Command Center/gui_launcher/",
+    "vercel_folder": "L:/GIT/Projects/AI Vision Command Center/AI Vision Boardroom/.vercel/",
+    "backup_folder": "L:/GIT/Projects/AI Vision Command Center/backup_center",
+    "api_folder": "L:/GIT/Projects/AI Vision Command Center/AI Vision Boardroom/api/"
+  },
+  "files": {
+    "json_memory": "masterplan.json",
+    "markdown_summary": "masterplan.md",
+    "gui_launcher": "ai_vision_command_launcher.py",
+    "context_updater": "ai_vision_command_manager.py",
+    "trigger_aa": "api/df_trigger.js",
+    "trigger_bb": "api/dfg_trigger.js",
+    "ai_handler": "api/ai-handler.js"
+  },
+  "agents": {
+    "DF": {
+      "description": "AI Vision agent that activates project memory and loads context files.",
+      "trigger_word": "DF:",
+      "last_trigger": "2025-06-00",
+      "status": "active"
+    },
+    "DFG": {
+      "description": "AI Vision Generator that summarizes input and updates masterplan.json and masterplan.md.",
+      "trigger_word": "DFG:",
+      "last_trigger": "2025-06-00",
+      "status": "active"
+    }
+  },
+  "tasks": {
+    "open": [
+      {
+        "id": "T001",
+        "title": "Auto-backup functie toevoegen",
+        "description": "Bouw een Python-functie die wekelijks masterplan.json and masterplan.md kopieert naar de Backup Center map.",
+        "assigned_to": "Brigitte",
+        "priority": "high"
+      },
+      {
+        "id": "T002",
+        "title": "GUI uitbreiden met nieuwe knoppen",
+        "description": "Voeg knoppen toe in de launcher voor context openen, samenvatting bekijken, backup maken.",
+        "assigned_to": "Brigitte",
+        "priority": "medium"
+      }
+    ],
+    "in_progress": [
+      {
+        "id": "T000",
+        "title": "AI Vision Command basisstructuur opzetten",
+        "description": "Alle bestanden en mapstructuur staan goed; nu verdere integratie mogelijk.",
+        "assigned_to": "Brigitte",
+        "priority": "done"
+      }
+    ],
+    "completed": []
+  },
+  "timeline": [
+    {
+      "date": "2025-06-04",
+      "event": "AI Vision Command structuur opgezet met GUI, contextbeheer, triggers DF & DFG, en logbestanden in .json en .md.",
+      "author": "Brigitte"
+    }
+  ],
+  "settings": {
+    "auto_backup_enabled": false,
+    "default_language": "en",
+    "summary_format": "markdown",
+    "ai_memory_limit": "extended",
+    "backup_frequency": "weekly",
+    "voice_assistant_enabled": false
+  }
+}

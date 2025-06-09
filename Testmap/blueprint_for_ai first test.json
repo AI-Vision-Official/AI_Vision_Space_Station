@@ -1,0 +1,118 @@
+import json
+
+# Gestructureerde JSON op basis van Brigitte's input
+ai_vision_command_center = {
+    "project": "AI Vision Command Center",
+    "goals": [
+        {
+            "priority": 1,
+            "description": "Create a structured AI collaboration environment",
+            "details": [
+                "AI should work with Brigitte on projects, with overview and memory"
+            ]
+        },
+        {
+            "priority": 2,
+            "description": "Use AA and BB as AI workflow triggers",
+            "details": [
+                "AA = activates AI Vision Command Center topic and loads context",
+                "BB = ends topic, summarizes session, updates blueprint.json and master-summary.md intelligently"
+            ]
+        },
+        {
+            "priority": 3,
+            "description": "Master-summary as one evolving document",
+            "details": [
+                "No separate files per session",
+                "Everything added to one master-summary.md",
+                "Clear structure with date and content",
+                "Readable by humans and usable by AI"
+            ]
+        },
+        {
+            "priority": 4,
+            "description": "AI should fully understand the project",
+            "details": [
+                "Knows current state, discussions, goals, and pending items"
+            ]
+        },
+        {
+            "priority": 5,
+            "description": "Make system 'Brigitte-proof' without losing power",
+            "details": [
+                "GUI tab: 'AI Vision Team'",
+                "AA/BB can be activated via ChatGPT or GUI tab",
+                "GUI is Python-based"
+            ]
+        },
+        {
+            "priority": 6,
+            "description": "Implement redundancy and failover routes",
+            "details": [
+                "If route A fails, route B or C is ready",
+                "Backup: JSON + Markdown + DB"
+            ]
+        }
+    ],
+    "file_paths": {
+        "blueprint": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\blueprint_for_ai.json",
+        "master_summary": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\master-summary_for_human.md",
+        "gui_launcher": "L:\\GIT\\Projects\\AI Vision Command Center\\gui_launcher\\ai_vision_command_launcher.py",
+        "gui_backup": "L:\\GIT\\Projects\\AI Vision Command Center\\gui_launcher\\ai_vision_command_launcher_backup.py",
+        "bat_launcher": "L:\\GIT\\Projects\\AI Vision Command Center\\gui_launcher\\ai_vision_command_launcher.bat",
+        "trigger_script": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\ai_vision_command_manager.py",
+        "vercel_config": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\.vercel\\vercel.json",
+        "api_handler": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\api\\ai-handler.js",
+        "df_script": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\api\\aa_trigger.js",
+        "dfg_script": "L:\\GIT\\Projects\\AI Vision Command Center\\AI Vision Boardroom\\api\\bb_trigger.js"
+    },
+    "BB_Trigger_definition": {
+        "BB": "Ends the topic and activates AI to summarize session",
+        "AI_action": [
+            "Summarizes the conversation",
+            "Updates blueprint.json as log entry",
+            "Updates master-summary.md with human-readable summary"
+        ],
+        "Note": "Brigitte does not enter the summary manually; AI handles it automatically"
+    },
+    "communication_flow": [
+        "Brigitte starts new thread",
+        "Brigitte types AA message",
+        "ChatGPT loads context",
+        "Project Management begins",
+        "Brigitte types BB to end",
+        "AI summarizes and saves the session"
+    ],
+    "human_vs_machine_files": {
+        ".json": "Machine brain - used by AI agents",
+        ".md": "Human logbook - readable history and decisions",
+        "reason": "Both are needed to combine automation and readable memory"
+    },
+    "GUI_tabs": [
+        "BB Logs",
+        "Heal the World Project",
+        "AI Builder",
+        "AI Vision Boardroom"
+    ],
+    "platforms_used": [
+        "Google Cloud",
+        "Vercel",
+        "Google Sheets",
+        "GitHub",
+        "VS Code"
+    ],
+    "remarks": [
+        "System must be bulletproof",
+        "No data duplication",
+        "Updates should be integrated intelligently into the master plan",
+        "Brigitte needs structured overview due to autism"
+    ],
+    "last_update": "2025-05-21"
+}
+
+# Bestand opslaan
+json_path = "/mnt/data/ai_vision_blueprint.json"
+with open(json_path, "w", encoding="utf-8") as f:
+    json.dump(ai_vision_plan, f, indent=4)
+
+json_path

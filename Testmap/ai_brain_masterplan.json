@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "AI Brain Workflow System",
+    "description": "Shared understanding of the AI Brain System for the Heal the World Project",
+    "last_updated": "2025-06-09"
+  },
+  "architecture": {
+    "agents": [
+      "Human GUI",
+      "Agent 1",
+      "Agent 2",
+      "ChatGPT Agent"
+    ],
+    "triggers": [
+      "DF (start workflow)",
+      "DFG (stop & summarize)"
+    ],
+    "github_repo": "Private, token-based access",
+    "local_sync": "On PC boot and after each DFG",
+    "sync_script": "git pull -> commit -> push (automated)"
+  },
+  "structure": {
+    "directories": [
+      "masterplan/masterplan.md",
+      "state/state.json",
+      "logs/log-YYYY-MM-DD.md",
+      "agents/agent1.py",
+      "triggers/DF_trigger.py, DFG_trigger.py",
+      "config/settings.yaml",
+      "gui/gui.py"
+    ]
+  },
+  "workflow": {
+    "DF": {
+      "action": "Read state.json, assign tasks, create logs",
+      "agents_triggered": "All available"
+    },
+    "DFG": {
+      "action": "Stop task, write to masterplan, update state",
+      "commit_push": true
+    }
+  },
+  "masterplan_sample": {
+    "date": "2025-06-09",
+    "trigger": "DF (by GUI)",
+    "agents": [
+      "Agent1",
+      "Agent2"
+    ],
+    "tasks": [
+      "Drought analysis",
+      "Logistics scan"
+    ],
+    "summary": [
+      "Agent1 mapped high-risk drought zones",
+      "Agent2 ran aid delivery simulation"
+    ],
+    "insights": [
+      "Use OSM overlays for faster mapping",
+      "Prioritize unstable regions"
+    ]
+  },
+  "state_sample": {
+    "current_workflow": "drought-aid-africa",
+    "step": "logistics-mapping",
+    "agents_active": [
+      "agent1",
+      "agent2"
+    ],
+    "last_trigger": "DF",
+    "last_update": "2025-06-09T11:00Z"
+  },
+  "agent_behavior_example": {
+    "file": "agent1.py",
+    "logic": [
+      "Read state",
+      "If workflow = drought-aid-africa:",
+      "Analyze data",
+      "Write log",
+      "Update masterplan",
+      "Update state",
+      "Push to GitHub"
+    ]
+  },
+  "gui_interface": [
+    "Start DF Trigger",
+    "Stop DFG Trigger",
+    "Read masterplan",
+    "Manual Git Sync",
+    "Open local folder",
+    "Input field for DF"
+  ]
+}
